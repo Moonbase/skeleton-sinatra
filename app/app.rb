@@ -2,13 +2,15 @@ require 'sinatra/base'
 require 'sprockets'
 
 class App < Sinatra::Base
+  configure :development do
+    require 'sinatra/reloader'
+    register Sinatra::Reloader
+  end
+
   set :public_folder, proc { File.join(root, '..', 'public') }
 
   set :sprockets_env, Sprockets::Environment.new
   sprockets_env.append_path 'app/assets/'
-  sprockets_env.append_path 'app/assets/javascript'
-  sprockets_env.append_path 'app/assets/stylesheets'
-  sprockets_env.append_path 'app/assets/sound'
   sprockets_env.css_compressor = :scss
 
   get '/assets/*' do
@@ -17,6 +19,7 @@ class App < Sinatra::Base
   end
 
   get '/' do
+    @time = Time.now
     erb :index, layout: :'layouts/layout'
   end
 end

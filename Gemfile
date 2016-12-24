@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'dotenv', groups: [:development, :test]
+gem 'dotenv', groups: %i(development test)
+gem 'sinatra-contrib', groups: %i(development test)
 gem 'sprockets'
 gem 'sass'
 
