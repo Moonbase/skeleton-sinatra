@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'dotenv', groups: %i(development test)
 gem 'sinatra-contrib', groups: %i(development test)
-gem 'sprockets'
-gem 'sass'
+
+# Uncomment to use Sentry error tracking
+gem 'sentry-raven'
 
 # Uncomment to use database
 # gem 'sequel'
