@@ -1,16 +1,18 @@
-var gulp        = require('gulp');
-var sass        = require('gulp-sass');
-var uglify      = require('gulp-uglify');
-var sourcemaps  = require('gulp-sourcemaps');
-var browserify  = require('browserify');
-var babelify    = require('babelify');
-var source      = require('vinyl-source-stream');
-var buffer      = require('vinyl-buffer');
+var gulp         = require('gulp');
+var sass         = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var uglify       = require('gulp-uglify');
+var sourcemaps   = require('gulp-sourcemaps');
+var browserify   = require('browserify');
+var babelify     = require('babelify');
+var source       = require('vinyl-source-stream');
+var buffer       = require('vinyl-buffer');
 
 gulp.task('compile:stylesheets', function() {
   return gulp.src('app/assets/stylesheets/app.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/assets/stylesheets'));
 });
