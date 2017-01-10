@@ -8,6 +8,23 @@ The following is required for your development environment:
 * Node
 * NPM
 
+## Creating a project
+
+To create a new project from this skeleton, follow these steps:
+
+* `git clone <repository-url>` this repository.
+* Change into the new directory.
+* Run `./setup.sh`. This will create a 'skeleton' branch and a 'master' branch. The 'skeleton' branch is used to update from the skeleton later on.
+* You can remove this section of the readme, the project is now set up.
+
+## Updating from the skeleton
+
+This project was created using the skeleton-sinatra project skeleton. If you want to update this project to the latest changes made to the skeleton, follow these steps:
+
+* Pull remote 'skeleton-sinatra/master' into local branch 'skeleton'.
+* Switch to the local branch 'master'.
+* Merge the local branch 'skeleton' into 'master'.
+
 ## Installation
 
 * `git clone <repository-url>` this repository.
