@@ -10,8 +10,8 @@ require_relative 'app/app'
 # end
 
 if ENV['RACK_ENV'] == 'development'
-  use Rack::LiveReload, no_swf: true
   require 'rack-livereload'
+  use Rack::LiveReload, no_swf: true
 end
 
 run App
