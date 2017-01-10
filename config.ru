@@ -9,4 +9,9 @@ require_relative 'app/app'
 #   use Raven::Rack
 # end
 
+if ENV['RACK_ENV'] == 'development'
+  use Rack::LiveReload, no_swf: true
+  require 'rack-livereload'
+end
+
 run App

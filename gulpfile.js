@@ -7,6 +7,7 @@ var browserify   = require('browserify');
 var babelify     = require('babelify');
 var source       = require('vinyl-source-stream');
 var buffer       = require('vinyl-buffer');
+var livereload   = require('gulp-livereload');
 
 gulp.task('compile:stylesheets', function() {
   return gulp.src('app/assets/stylesheets/app.scss')
@@ -40,4 +41,9 @@ gulp.task('build', ['compile:stylesheets', 'compile:javascript', 'compile:images
 
 gulp.task('watch', ['build'], function() {
 	gulp.watch('app/assets/**/*', ['build']);
+
+  livereload.listen();
+  gulp.watch(['app/views/**','app/assets/**']).on('change', function(file) {
+    livereload.changed(file.path);
+  });
 });

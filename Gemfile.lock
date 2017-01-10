@@ -5,6 +5,8 @@ GEM
     dotenv (2.1.1)
     multi_json (1.12.1)
     rack (1.6.5)
+    rack-livereload (0.3.16)
+      rack
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -27,6 +29,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
+  rack-livereload
   sinatra
   sinatra-contrib
 
