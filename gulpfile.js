@@ -27,9 +27,9 @@ gulp.task('compile:javascript', function() {
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
-		.pipe(uglify())
+    .pipe(uglify())
     .pipe(sourcemaps.write())
-		.pipe(gulp.dest('./public/assets/javascript'));
+    .pipe(gulp.dest('./public/assets/javascript'));
 });
 
 gulp.task('compile:images', function() {
@@ -40,7 +40,7 @@ gulp.task('compile:images', function() {
 gulp.task('build', ['compile:stylesheets', 'compile:javascript', 'compile:images']);
 
 gulp.task('watch', ['build'], function() {
-	gulp.watch('app/assets/**/*', ['build']);
+  gulp.watch('app/assets/**/*', ['build']);
 
   livereload.listen();
   gulp.watch(['app/views/**','app/assets/**']).on('change', function(file) {
