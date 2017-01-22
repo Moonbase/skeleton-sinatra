@@ -1,0 +1,11 @@
+development:
+  greeting: 'Hello developer'
+
+test:
+  greeting: 'Guten Tag'
+
+staging:
+  greeting: 'Buenos dias'
+
+production:
+  greeting: 'Hi there'

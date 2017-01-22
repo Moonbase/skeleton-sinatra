@@ -1,0 +1,17 @@
+version: '2'
+services:
+  # db:
+  #   image: postgres
+  #   ports:
+  #     - "5432:5432"
+  web:
+    build: .
+    command: rackup -s puma --host 0.0.0.0
+    volumes:
+      - .:/app
+    ports:
+      - "9292:9292"
+    environment:
+      - RACK_ENV
+    depends_on:
+      - db

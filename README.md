@@ -1,12 +1,8 @@
 # Moonbase Co. Sinatra skeleton
 
 ## Development requirements
-The following is required for your development environment:
-* Ruby
-* Rack: http://rack.github.io
-* Bundler: http://bundler.io
-* Node
-* NPM
+
+A development environment can be set up using Docker. This will take care of all required software.
 
 ## Creating a project
 
@@ -15,7 +11,15 @@ To create a new project from this skeleton, follow these steps:
 * `git clone <repository-url>` this repository.
 * Change into the new directory.
 * Run `./setup.sh`. This will create a 'skeleton' branch and a 'master' branch. The 'skeleton' branch is used to update from the skeleton later on.
+* Optionally enable packages. See "Included packages" section.
 * You can remove this section of the readme, the project is now set up.
+
+## Included packages
+
+The following packages are included but disabled by default:
+
+* PostgreSQL: Uncomment the required gems in `Gemfile` and the `db` service in `docker-compose.yml`.
+* Sentry: Uncomment the required gems in `Gemfile` and the setup script in `config.ru`. Configure `SENTRY_DSN` environment variable.
 
 ## Updating from the skeleton
 
@@ -35,12 +39,6 @@ This project was created using the skeleton-sinatra project skeleton. If you wan
 ## Developing
 The following commands are available for development:
 
-* `bundle exec rackup`: Start a server.
-* `bundle exec dotenv rackup`: Start a server with environment variables from `.env` file.
+* `docker-compose up`: Start development services.
 * `npm run build`: Build static front-end assets.
 * `npm run watch`: Start a watcher that builds static front-end assets. This also starts a LiveReload server.
-
-## Environment variables
-The following environment variables can optionally be configured:
-
-* `SENTRY_DSN`: The DSN used by the Sentry raven gem for error tracking.

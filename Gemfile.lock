@@ -4,6 +4,7 @@ GEM
     backports (3.6.8)
     dotenv (2.1.1)
     multi_json (1.12.1)
+    puma (3.6.2)
     rack (1.6.5)
     rack-livereload (0.3.16)
       rack
@@ -29,9 +30,10 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
+  puma
   rack-livereload
   sinatra
   sinatra-contrib
 
 BUNDLED WITH
-   1.12.5
+   1.14.1
